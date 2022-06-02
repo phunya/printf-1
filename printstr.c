@@ -1,20 +1,19 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * _printstr - prints a string in reverse.
- * @s: is a pointer to a char array
- * Return: Returns the transformed pointer
-**/
-
-void _printstr(char *s)
+ * printstr- print str.
+ * @pa: gtgtg
+ * @format: format str.
+ * Return: number str for print.
+ */
+int printstr(char *format, va_list pa)
 {
+	char *string = va_arg(pa, char *);
+	int contador;
+	(void)format;
 
-if (*s == 0)
-	return;
-
-s++;
-_printstr(s);
-s--;
-_putchar(*s);
-
+	if (string == NULL)
+		string = "(null)";
+	contador = _puts(string);
+	return (contador);
 }
